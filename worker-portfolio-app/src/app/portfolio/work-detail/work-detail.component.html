@@ -1,0 +1,97 @@
+<div class="workEditForm" style="width: 1000px; margin: auto;">
+  <div *ngIf="currentWork" class="edit-form">
+    <h4><strong>Edit Work Entry</strong></h4>
+    <br>
+      <form>
+      <div class="form-group">
+        <label for="workName"><strong>Name of Work:</strong></label>
+        <input
+          type="text"
+          class="form-control"
+          id="workName"
+          [(ngModel)]="currentWork.workName"
+          name="workName"
+          >
+      </div>
+      <div class="form-group mt-3">
+        <label for="clientName"><strong>Name of the client:</strong></label>
+        <input
+          type="text"
+          class="form-control"
+          id="clientName"
+          [(ngModel)]="currentWork.clientName"
+          name="clientName"
+          >
+      </div>
+      <div class="form-group mt-3">
+        <label for="description"><strong>Description:</strong></label>
+        <textarea name="q" id="" cols="30" rows="4"
+        type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentWork.description"
+          name="description">
+        </textarea>
+      </div>
+      <div class="form-group mt-3">
+        <label for="img"><strong>Upload an image:</strong></label>
+        <input #inputImg
+          class="form-control"
+          id="img"
+          required
+          type="file"
+          name="image"
+          (change)="fileChangeEvent($event)"
+        />
+      </div>
+      <div class="mt-3">
+        <button class="btn btn_reset"
+        (click)="remove()">Reset File</button>
+      </div>
+
+      <div class="form-group mt-3">
+        <label><strong>Status:</strong></label>
+        {{ currentWork.published ? "Published" : "Pending" }}
+      </div>
+      </form>
+      <hr>
+      <div class="mx-auto mb-4 col-xs-2">
+        <img class="img-fluid img-thumbnail workImage" #img [src]="currentWork.image">
+      </div>
+    </div>
+    <button
+      class="btn btn-primary m-2"
+      *ngIf="currentWork.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      class="btn btn_publish m-2"
+      *ngIf="!currentWork.published"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+
+    <button
+      class="btn btn_delete m-2"
+      (click)="deleteWork()"
+    >
+      Delete
+    </button>
+    <button
+      type="submit"
+      class="btn btn_submit m-2"
+      (click)="updateWork()"
+    >
+      Update
+    </button>
+
+    <p>{{ message }}</p>
+
+  <div *ngIf="!currentWork">
+    <br>
+    <p>Cannot access this entry...</p>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="workEditForm" style="width: 1000px; margin: auto;">
+  <div *ngIf="!submitted">
+    <form (ngSubmit)="saveWork()" class="submit-form">
+    <h4><strong>Edit Work Entry</strong></h4>
+    <br>
+    <div class="form-group">
+        <label for="workName"><strong>Name of Work:</strong></label>
+        <input
+          type="text"
+          class="form-control"
+          id="workName"
+          required
+          [(ngModel)]="work.workName"
+          name="workName"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="workName"><strong>Client Name</strong></label>
+        <input
+          type="text"
+          class="form-control"
+          id="workName"
+          required
+          [(ngModel)]="work.clientName"
+          name="workName"
+        />
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="description"><strong>Description:</strong></label>
+        <textarea name="q" id="" cols="30" rows="4"
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="work.description"
+          name="description">
+        </textarea>
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="img"><strong>Upload an image:</strong></label>
+        <input #inputImg
+          class="form-control"
+          id="img"
+          required
+          type="file"
+          [(ngModel)]="work.image"
+          name="image"
+          (change)="fileChangeEvent($event)"
+        />
+        <div class="mt-3 mb-5">
+          <button class="btn btn_reset"
+          (click)="remove()">Reset File</button>
+        </div>
+      </div>
+      <div class="mt-3">
+        <button type="submit" class="btn btn_submit">Submit</button>
+      </div>
+      </form>
+    </div>
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn_add mt-2" (click)="newWork()">Add</button>
+    </div>
+  </div>
+
+

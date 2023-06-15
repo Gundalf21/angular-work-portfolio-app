@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&family=Redacted&display=swap');
+
+.navbarEl {
+  box-shadow: 0 0px 10px rgb(0, 0, 0);
+  animation-name: shadowFadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes shadowFadeIn {
+  0% {box-shadow: 0 0px 0 rgba(255, 255, 255, 0);}
+  20% {box-shadow: 0 0px 0 rgba(74, 74, 74, 0);}
+  100% {box-shadow: 0 0px 10px rgb(0, 0, 0);}
+}
+
+

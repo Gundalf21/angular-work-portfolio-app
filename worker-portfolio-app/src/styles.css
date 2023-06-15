@@ -1,0 +1,228 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+.magnifying-glass {
+  background-color: black;
+justify-content:center;
+transition: 0.2s;
+}
+
+.magnifying-glass:hover {
+  filter: invert(1);
+  border-color: rgb(255, 255, 255);
+  border-width: 1px;
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+.container-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn_add {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 14px;
+  height: 32px;
+  color: rgb(29, 30, 30);
+  margin-left: auto;
+  width: 52px;
+  margin: 10px;
+  border-radius: 25px;
+  background-color: rgb(175, 251, 22);
+  transition: all 0.3s;
+}
+.btn_add:hover {
+  box-shadow: 0 0px 10px rgba(37, 177, 6, 0.778);
+}
+
+.btn_submit {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  height: 38px;
+  color: rgb(29, 30, 30);
+  margin-left: auto;
+  width: 86px;
+  border-radius: 25px;
+  background-color: rgb(175, 251, 22);
+  transition: all 0.3s;
+}
+.btn_submit:hover {
+  box-shadow: 0 0px 10px rgba(37, 177, 6, 0.778);
+}
+
+.btn_delete {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  height: 38px;
+  color: rgb(255, 255, 255);
+  margin-left: auto;
+  width: 86px;
+  border-radius: 25px;
+  background-color: rgb(250, 55, 133);
+  transition: all 0.3s;
+}
+.btn_delete:hover {
+  box-shadow: 0 0px 10px rgba(110, 10, 135, 0.778);
+}
+
+.btn_publish {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  height: 38px;
+  color: rgb(255, 255, 255);
+  margin-left: auto;
+  width: 86px;
+  border-radius: 25px;
+  background-color: rgb(107, 55, 250);
+  transition: all 0.3s;
+}
+.btn_publish:hover {
+  box-shadow: 0 0px 10px rgba(33, 10, 135, 0.778);
+}
+
+.btn_reset {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 14px;
+  height: 35px;
+  color: rgb(255, 255, 255);
+  margin-left: auto;
+  width: 90px;
+  border-radius: 6px;
+  background-color: #a83c74d9;
+  transition: all 0.3s;
+}
+.btn_reset:hover {
+  box-shadow: 0 0px 10px rgba(177, 43, 6, 0.803);
+}
+
+.btn_remove {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 14px;
+  height: 32px;
+  color: aliceblue;
+  margin-left: auto;
+  width: 102px;
+  margin: 10px;
+  border-radius: 25px;
+  background-color: rgb(250, 55, 133);
+  transition: all 0.3s;
+}
+.btn_remove:hover {
+  box-shadow: 0 0px 10px rgba(110, 10, 135, 0.778);
+}
+
+.listOfWorks,
+.currWork {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listOfWorks {
+  width: 60%;
+}
+
+.currWork {
+  width: 40%;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .currWork {
+    display: inline;
+    width: 100%;
+    vertical-align:middle;
+  }
+
+}
+
+/* .top_title_elem{
+  display: flex;
+} */
+
+.top_title_elem h4 {
+  cursor: default;
+}
+
+.list-group-item {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 14px;
+  text-indent: 12px;
+  display:flex;
+  align-items: center;
+  text-align: left;
+  height: 35px;
+  width: 400px;
+  margin-left: 0;
+  margin: 16px;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgba(79, 73, 201, 0.514);
+  transition: 0.4s;
+
+}
+
+.list-group-item:focus-within {
+  color: aliceblue;
+  background-color: rgb(55, 38, 169);
+  box-shadow: 0 2px 15px rgb(79, 73, 201);
+}
+
+.list-group-item:hover {
+  color: aliceblue;
+  background-color: rgb(55, 38, 169);
+  box-shadow: 0 2px 15px rgb(79, 73, 201);
+}
+
+.currWork {
+  display: inline-block;
+}
+
+.text_alert {
+  text-align: center;
+  cursor: default;
+  color: crimson;
+  animation-name: alert_fade;
+  animation-duration: 1s;
+}
+
+.text_status{
+  cursor: default;
+  color: rgb(103, 20, 220);
+}
+
+@keyframes alert_fade {
+  0% {color:transparent;}
+  50% {color:transparent;}
+  100% {color: crimson;}
+}
+
+.noise-image {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  background-image: url("https://stackdiary.com/wp-content/uploads/2022/10/noise_img.png");
+  background-position: 0px 0px;
+  background-size: auto;
+  opacity: 0.5;
+}
+
+.gradient {
+  background: linear-gradient(-45deg, #ffeb3b, #74efff, #9c27b0);
+  background-size: 400% 400%;
+  animation: gradient-bg 20s ease infinite;
+}
+
+@keyframes gradient-bg {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}

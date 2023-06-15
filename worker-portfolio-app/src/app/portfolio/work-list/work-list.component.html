@@ -1,0 +1,73 @@
+<div class="list row container">
+  <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="workName"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-base magnifying-glass"
+            type="button"
+            (click)="searchTitle()"
+          >
+          <img class="" style="filter: invert(1);" src="../../../assets/icons/magnifying-glass.png" alt="Search!" width="15">
+          </button>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-4 listOfWorks">
+    <div class="top_title_elem mt-4 mb-2">
+      <div class="container-title">
+        <h4>List of works</h4>
+      </div>
+        <div class="ms-2">
+          <button class="mt-2 me-2 btn btn-sm btn_remove" (click)="removeAllWorks()">
+            Remove All
+          </button>
+          <button routerLink="../add" class="mt-2 btn btn-sm btn_add">
+            Add
+          </button>
+        </div>
+      </div>
+    <ul class="listGroup">
+      <button
+        class="list-group-item"
+        *ngFor="let work of works; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveWork(work, i)"
+      >
+        {{ work.workName }}
+    </button>
+    </ul>
+  </div>
+  <div class="col-md-12 currWork">
+    <div *ngIf="currentWork">
+      <div class="mt-4 mb-4 text_status"><h5>{{currentWork.workName}}</h5></div>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentWork.workName }}
+      </div>
+      <div class="mt-2">
+        <label><strong>Description:</strong></label>
+        {{ currentWork.description }}
+      </div>
+      <div class="mt-3 text_status">
+        <label><strong class="">Status:</strong></label>
+        {{ currentWork.published ? "Published" : "Pending" }}
+      </div>
+
+      <a class="badge bg-warning mt-2" routerLink="/works/{{ currentWork.id }}">
+        Edit
+      </a>
+
+      <div class="mt-3 w-auto"><img class="img-fluid img-thumbnail" [src]="currentWork.image"></div>
+    </div>
+
+    <div *ngIf="!currentWork" class="mt-5 me-5">
+      <p class="text_alert"><strong>Please select a work entry from the portfolio.</strong></p>
+    </div>
+  </div>
+</div>
+
