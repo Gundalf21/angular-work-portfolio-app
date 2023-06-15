@@ -13,4 +13,6 @@ The database is called "works" which contains the "work" table which contains th
 -description(TEXT);
 -image(TEXT) - the image representing a screenshot of the user's work. It is converted to base64 and stored in a text format.
 
+[IMPORTANT]
+"worker-portfolio-app" is the Angular app while "worker-portfolio-node-express-sequelize-mysql" is the API created for the app.
 The user/password for MySQL authentication - "root".
